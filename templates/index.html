@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Gogh Paintings Explorer</title>
+    <style>
+        /* 可選：添加基本樣式 */
+        body {
+            margin: 0;
+        }
+
+        #main-svg {
+            width: 100%;
+            height: 100vh;
+        }
+
+        #minimap {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 240px;
+            height: 180px;
+            border: 1px solid #ccc;
+        }
+
+        #legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: auto;
+            height: auto;
+            padding: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <svg id="main-svg"></svg>
+    <svg id="minimap"></svg>
+    <svg id="legend"></svg>
+    <!-- 彈出視窗 -->
+    <div id="popup"
+        style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:1000;">
+        <img id="popup-image" src="" style="max-width:300px; max-height:300px;" />
+        <p id="popup-info"></p>
+        <button id="close-popup">關閉</button>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="/static/main.js"></script>
+</body>
+
+</html>
